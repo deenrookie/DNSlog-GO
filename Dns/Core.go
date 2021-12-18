@@ -112,8 +112,8 @@ func NewAResource(query dnsmessage.Name, a [4]byte) dnsmessage.Resource {
 
 func (d *DnsInfo) Set(data DnsInfo) {
 	rw.Lock()
-	if len(DnsData) > 1000 {
-		DnsData = (DnsData)[len(DnsData)-1000:]
+	if len(DnsData) > 4000 {
+		DnsData = (DnsData)[len(DnsData)-4000:]
 	}
 	DnsData = append(DnsData, data)
 	rw.Unlock()
